@@ -10,9 +10,9 @@ highlighter: rouge
 markdown: kramdown
 
 # Pagination
-paginate: 4
-permalink: /blog/:year/:title/
-paginate_path: /blog/page:num/
+paginate: 3
+# permalink: /blog/:year/:title/
+# paginate_path: /blog/page:num/
 
 # Social media links in footer
 github: "mint-vu/Continual_Learning"
