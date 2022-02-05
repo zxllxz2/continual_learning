@@ -3,21 +3,21 @@ layout: post
 title: "Online EWC"
 description: Introduction to Online EWC
 ---
-<!-- Example modified from [here](http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html){:target="_blank"}. -->
+
+
 
 Motivation for Online EWC
 ============
 
 Last section mentions that space and time complexity of Offline EWC can become unacceptable as task number grows.
-In light of this, Online EWC is introduced as a variant of the EWC technique. Online EWC compromises the 
-performance for a better complexity than the Offline version. So, it makes sense considering Online EWC as 
+In light of this, Online EWC is introduced as a variant of the EWC technique. Online EWC compromises the
+performance for a better complexity than the Offline version. So, it makes sense considering Online EWC as
 a product of the trade-off between performance and complexity.
 
 
 
 How Online EWC works
 --------------
-
 
 Online EWC realizes multi-task continual learning by maintaining a single FIM (call it online
 FIM for differentiating purpose). This online FIM gets updated each time a new task is trained. Denote the online
@@ -119,12 +119,12 @@ class OnlineEWC:
         self._time += time.time() - start_time
 ~~~
 
-To compare online EWC with offline EWC, it's a good idea to conduct experiments on online EWC with the same sample data 
+To compare online EWC with offline EWC, it's a good idea to conduct experiments on online EWC with the same sample data
 as that of offline EWC. The sample data we use is as follows
 
 ![online4_data](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/data_online4.png?raw=true)
 
-Just like what we did for the Offline EWC, we use a 4-hidden-layer MLP with perceptron number of 1, 100, 100, 100, 100, 
+Just like what we did for the Offline EWC, we use a 4-hidden-layer MLP with perceptron number of 1, 100, 100, 100, 100,
 and 1 for the Online EWC.
 
 Below is the trace of the experiments after each individual task being trained
@@ -150,4 +150,3 @@ Task 4:
 ![task4_online4](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/task4_online4.png?raw=true)
 
 Not bad, right? But can we do better? Obviously, Online EWC is not the end, the next section will focus on possible improvements for EWC techniques.
-

@@ -2,7 +2,7 @@ remote_theme: jitinnair1/gradfolio
 title: Continual Learning
 description: MINT Lab | Vanderbilt University
 
-baseurl: /tempweb #name of GitHub repository
+baseurl: /continual_learning #name of GitHub repository
 # url: "" #custom url to be used instead of GitHub repository
 email: xiaoliang.zhu@vanderbilt.edu
 

@@ -4,6 +4,7 @@ title: L2-norm Regularization
 description: Naive regularization
 ---
 
+
 An Entry Point to Regularization-based Methods
 ============
 
