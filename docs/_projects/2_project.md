@@ -23,7 +23,7 @@ Real Implementation
 
 Let's see some codes then! Here, we experiment with regression on two datasets to test the L2-norm regularization method that we juest mentioned. Using an MLP with two hidden layers (the same as the one used in the first post), the method regresses first on the dataset marked by blue (task A) and then on the one marked by orange (task B). First we can check the raw result - what if we do nothing special and just conduct the training sequentially on the two datasets?
 
-<img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/l2_cata.jpg?raw=true" style="display:block;margin-left: auto;margin-right: auto; width:88%" /><br>
+<img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/l2_cata.jpg?raw=true" style="display:block;margin-left: auto;margin-right: auto; width:78%" /><br>
 
 Well, clearly we obtain a bad result. Now, we incorporate an L2-norm regularizer on the objective function, and we use this new model to conduc the same training process.
 
