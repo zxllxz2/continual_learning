@@ -14,3 +14,5 @@ But wait. What is catastrophic forgetting? Check our [first project](projects/1_
 We have surveyed existing methods to solve the catastrophic forgetting, including Elastic Weight Consolidation (EWC), Synapsis intelligence (SI), etc. Check our [project page](projects/) which contains a series of explanations, examples and experiments on those methods.
 
 In the future, we will continue to expand our survey list and explore selective forgetting, a technique to make previously trained synapsis plastic again. For now, we are researching the masking technique, such that we fix the weights of a certain number of neurons in the model to maintain the model performance. Check our projects if you have any interest.
+
+This is a test message.
