@@ -78,6 +78,6 @@ Current, one possible solution that we come up with for this problem is to make 
 
 
  <p style="text-align:center; display: flex; justify-content: space-between">
-   <a href="../2_project">Prev: Online EWC</a>
-   <a href="../4_project">Next: What's Next</a>
+   <a href="../4_project">Prev: Online EWC</a>
+   <a href="../6_project">Next: What's Next</a>
  </p>

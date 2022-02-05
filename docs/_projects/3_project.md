@@ -8,10 +8,7 @@ description: Introduction to Elastic Weight Consolidation (EWC)
 Motivation for Elastic Weight Consolidation (EWC)
 ============
 
-Although L-2 norm regularization moderates catastrophic forgetting in some sense, it has one serious problem: no distinction in feature importance
-of previous tasks. As a result, L2-norm regularization may pose great restrictions for all features, and, overall, the restriction can be so severe that the
-neural network can only remember previous tasks at the expense of not learning the new task. In light of this situation,
-elastic weight consolidation (EWC) comes to the rescue: EWC is able to distinguish between important and unimportant features, and will
+Although L-2 norm regularization moderates catastrophic forgetting in some sense, it has one serious problem: no distinction in feature importance of previous tasks. As a result, L2-norm regularization may pose great restrictions for all features, and, overall, the restriction can be so severe that the neural network can only remember previous tasks at the expense of not learning the new task. In light of this situation, elastic weight consolidation (EWC) comes to the rescue: EWC is able to distinguish between important and unimportant features, and will
 penalize features that are critical to previous tasks severely while penalizing marginal features slightly. This allows simultaneous remembering and learning.
 
 
@@ -57,8 +54,7 @@ to the following using Hessian matrix:
 Laplace approximation can be a solid approximation for the feature importance. However, the involvement
 of the second derivative makes it hard to implement in practice. A further approximation for the Hessian
 matrix is then needed for the posterior. The approximation we'll choose is the Fisher Information Matrix (FIM).
-FIM is defined to be the matrix multiplication of the first derivative, and, in our context, the FIM can be computed
-as
+FIM is defined to be the matrix multiplication of the first derivative, and, in our context, the FIM can be computed as
 
 <p align="center">
   <img width="230" height="47" src="https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/FIM_eq5.jpg?raw=true">

@@ -156,6 +156,6 @@ Not bad, right? But can we do better? Obviously, Online EWC is not the end, the 
 
 
 <p style="text-align:center; display: flex; justify-content: space-between">
-  <a href="../2_project">Prev: Elastic Weight Consolidation</a>
-  <a href="../4_project">Next: Masking</a>
+  <a href="../3_project">Prev: Elastic Weight Consolidation</a>
+  <a href="../5_project">Next: Masking</a>
 </p>
