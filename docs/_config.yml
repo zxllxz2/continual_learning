@@ -1,0 +1,62 @@
+remote_theme: jitinnair1/gradfolio
+title: Continual Learning
+description: MINT Lab | Vanderbilt University
+
+baseurl: /tempweb #name of GitHub repository
+# url: "" #custom url to be used instead of GitHub repository
+email: xiaoliang.zhu@vanderbilt.edu
+
+highlighter: rouge
+markdown: kramdown
+
+# Pagination
+paginate: 3
+# permalink: /blog/:year/:title/
+# paginate_path: /blog/page:num/
+
+# Social media links in footer
+github: "mint-vu/Continual_Learning"
+twitter: "skolouri"
+# researchgate: "#"
+# orcid: "#"
+
+highlighter: rouge
+markdown: kramdown
+latex_engine: xelatex
+
+# Tracker
+# analytics:
+
+#optimization -> compress.html
+compress_html:
+  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
+  comments: ["<!-- ", " -->"]
+  endings: [all]
+  ignore:
+    envs: [local]
+  blanklines: false
+  profile: false
+  startings: []
+
+#collection
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+sass:
+  sass_dir: /assets/css/_sass
+  style: compressed
+
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - LICENSE.md
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-email-protect
+  - jekyll-target-blank
