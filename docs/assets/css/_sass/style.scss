@@ -106,6 +106,13 @@ blockquote {
   font-style: italic;
 }
 
+.profile-thumbnail {
+  object-fit: cover;
+  object-position: center top;
+  width: 200px;
+  height: 200px;
+}
+
 
 .headline, .post-headline {
   font-size: 2em;
@@ -170,10 +177,3 @@ blockquote {
 
 .scroll::-webkit-scrollbar {
   display: none; }
-
-.profile-thumbnail {
-  object-fit: cover;
-  object-position: center top;
-  width: 200px;
-  height: 200px;
-}
