@@ -2,12 +2,10 @@
 layout: post
 title:  "Start from Naive Regularization"
 description: L2-norm Regularization
+bigtop: An Entry Point to Regularization-based Methods
 ---
 
-
-An Entry Point to Regularization-based Methods
-============
-
+<br>
 L2-norm regularization
 ------------
 
