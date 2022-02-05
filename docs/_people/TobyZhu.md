@@ -6,7 +6,7 @@ avatar: TobyZhu.jpg
 twitter: MintLab
 ---
 
-<img width="230" src="{{site.baseurl}}/assets/images/people/{{page.avatar}}">
+<img width="245" src="{{site.baseurl}}/assets/images/people/{{page.avatar}}">
 
 _Undergraduate Student_<br>
 
