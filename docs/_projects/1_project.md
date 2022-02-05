@@ -99,3 +99,9 @@ Unfortunately, catastrophic forgetting is still an unsolved problem in the conti
 Luckily, some studies invented other methods to alleviate catastrophic forgetting, which can be broadly divided into three main categories - architectural, regularization-based, and memory-based. All those methods reduce forgetting to some extent with limitations. What we are going to discuss here are regularization-based methods, including the most basic L2-norm regularization and the Elastic Weight Consolidation (EWC). Basically, regularization-based methods apply constraints on the model, forcing model parameters to stay close to optimized values for the old tasks. We will go through both of them in later sections.
 
 Thanks for reading. If you like this article or are interested in the topic of catastrophic forgetting, you are more than welcome to read our other project posts. Thanks again for your support!
+
+
+<br>
+<p style="text-align:right">
+  <a href="./2_project">Next: L2-norm Regularization</a>
+</p>
