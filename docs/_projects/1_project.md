@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Why you forget me?"
-description: Explanation on catastrophic forgetting
+title: "Why You Forget Me?"
+description: Explanation on Catastrophic Forgetting
 ---
 
 

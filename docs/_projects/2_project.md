@@ -1,7 +1,7 @@
 ---
 layout: post
-title: L2-norm Regularization
-description: Naive regularization
+title:  "Start from Naive Regularization"
+description: L2-norm Regularization
 ---
 
 

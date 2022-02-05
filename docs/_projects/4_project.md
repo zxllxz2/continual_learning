@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Online EWC"
+title: "Maybe More Efficiency?"
 description: Introduction to Online EWC
 ---
 

@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "EWC"
-description: Introduction to EWC
+title: "Want Something that Performs Better?"
+description: Introduction to Elastic Weight Consolidation (EWC)
 ---
-
 
 
 Motivation for Elastic Weight Consolidation (EWC)
@@ -23,7 +22,7 @@ EWC tackles the problem from a probabilistic perspective. Assume that we are try
 conditional probability that we are trying to optimize would be *<span>log p(&theta; | D)</span>*. Let's first consider the two-task case.
 
 Suppose *<span>D</span>* is comprised of independent and disjoint datasets *<span>D<sub>A</sub></span>* and
-*<span>D<sub>B</sub></span>*, and it follows that *<span>D = D<sub>A</sub> ∪ D<sub>B</sub></span>*. For the 
+*<span>D<sub>B</sub></span>*, and it follows that *<span>D = D<sub>A</sub> ∪ D<sub>B</sub></span>*. For the
 two-task case, the conditional probability *<span>log p(&theta; | D)</span>* is equivalent to *<span>log p(&theta; | D<sub>A</sub> + D<sub>B</sub>)</span>*.
 Using Beyes' rule, we can compute *<span>log p(&theta; | D)</span>* using the following expression:
 
@@ -34,9 +33,9 @@ Using Beyes' rule, we can compute *<span>log p(&theta; | D)</span>* using the fo
 *<span>log p(&theta; | D)</span>* is the posterior of continually learning two tasks, and terms in the above expression
 corresponds to the negative loss of the second task, prior of the second task (also posterior of the first task),
 and the normalization respectively. It can be easily inferred that all information about previous task should be contained
-in the term *<span>log p(&theta; | D<sub>A</sub>)</span>*. In order to perform maximum a posterior (MAP) method, we need to find 
-a way to represent the posterior of the previous task, *<span>log p(&theta; | D<sub>A</sub>)</span>*. Nevertheless, the exact posterior is intractable and 
-we do not have access to data of previous tasks, so it must be approximated cleverly. One way to achieve this is through Laplace 
+in the term *<span>log p(&theta; | D<sub>A</sub>)</span>*. In order to perform maximum a posterior (MAP) method, we need to find
+a way to represent the posterior of the previous task, *<span>log p(&theta; | D<sub>A</sub>)</span>*. Nevertheless, the exact posterior is intractable and
+we do not have access to data of previous tasks, so it must be approximated cleverly. One way to achieve this is through Laplace
 Approximation, which will be discussed briefly here.
 
 The crux of Laplace approximation is the second-degree Taylor expansion. Denote *<span> h(&theta;) = log p(&theta; | D<sub>A</sub>)</span>*, and let *<span>&theta;*</span>* be the point where *<span>h(&theta;)</span>*
@@ -64,8 +63,8 @@ as
   <img width="230" height="47" src="https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/FIM_eq5.jpg?raw=true">
 </p>
 
-FIM has three properties: *<span>(i)</span>* It is equivalent to the second derivative of teh loss near the 
-minimum, *<span>(ii)</span>* it can be computed from first-order derivative alone, and *<span>(iii)</span>* it 
+FIM has three properties: *<span>(i)</span>* It is equivalent to the second derivative of teh loss near the
+minimum, *<span>(ii)</span>* it can be computed from first-order derivative alone, and *<span>(iii)</span>* it
 is guaranteed to be positive semi-definite. Based on these, the Hessian matrix can then be approximated by *<span>-F</span>*.
 This provides a further approximation for the posterior:
 
@@ -73,7 +72,7 @@ This provides a further approximation for the posterior:
   <img width="300" height="47" src="https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/FIM_approximation_eq6.jpg?raw=true">
 </p>
 
-If we define a hyper-parameter *<span>&lambda;</span>* that determines the importance of the old task compared with the new one, 
+If we define a hyper-parameter *<span>&lambda;</span>* that determines the importance of the old task compared with the new one,
 MAP then gives the loss function *<span>L</span>* that we should minimize in EWC for two-task case:
 
 <p align="center">
@@ -88,7 +87,7 @@ Obviously, it is uncommon for real world to contain only two tasks. So, now, we 
 Offline EWC is the first multi-task technique we'll explore.
 
 Offline EWC is a natural extension of the two-task EWC. It strictly follows the idea of EWC by storing all fisher information matrices from previous tasks,
-and adding them one by one as the regularization term when learning a new task. Suppose we are trying to learn the *<span>K<sup>th</sup></span>* task, the 
+and adding them one by one as the regularization term when learning a new task. Suppose we are trying to learn the *<span>K<sup>th</sup></span>* task, the
 loss function *<span>L</span>* using offline EWC would be
 
 <p align="center">
