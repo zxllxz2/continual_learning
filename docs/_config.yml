@@ -1,6 +1,6 @@
 remote_theme: jitinnair1/gradfolio
-title: Xiaoliang(Toby) Zhu
-description: TA & RA | Vanderbilt University
+title: Continual Learning
+description: MINT Lab | Vanderbilt University
 
 baseurl: /continual_learning #name of GitHub repository
 # url: "" #custom url to be used instead of GitHub repository
@@ -10,22 +10,22 @@ highlighter: rouge
 markdown: kramdown
 
 # Pagination
-paginate: 4
-permalink: /blog/:year/:title/
-paginate_path: /blog/page:num/
+paginate: 3
+# permalink: /blog/:year/:title/
+# paginate_path: /blog/page:num/
 
 # Social media links in footer
-facebook: "toby.zhu.54"
-linkedin: "xiaoliangzhutoby/"
-github: "zxllxz2"
+github: "mint-vu/Continual_Learning"
+twitter: "skolouri"
 # researchgate: "#"
 # orcid: "#"
 
 highlighter: rouge
 markdown: kramdown
+latex_engine: xelatex
 
 # Tracker
-analytics:
+# analytics:
 
 #optimization -> compress.html
 compress_html:
