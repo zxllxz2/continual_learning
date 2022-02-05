@@ -2,15 +2,13 @@
 layout: post
 title: "Maybe More Efficiency?"
 description: Introduction to Online EWC
+bigtop: Online EWC
 ---
 
-Motivation for Online EWC
-============
 
 Last section mentions that space and time complexity of Offline EWC can become unacceptable as task number grows.
-In light of this, Online EWC is introduced as a variant of the EWC technique. Online EWC compromises the
-performance for a better complexity than the Offline version. So, it makes sense considering Online EWC as
-a product of the trade-off between performance and complexity.
+
+In light of this, Online EWC is introduced as a variant of the EWC technique. Online EWC compromises the performance for a better complexity than the Offline version. So, it makes sense considering Online EWC as a product of the trade-off between performance and complexity.
 
 
 

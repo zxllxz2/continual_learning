@@ -2,12 +2,10 @@
 layout: post
 title:  "Start from Naive Regularization"
 description: L2-norm Regularization
-bigtop: Into Regularization-based Methods
+bigtop: Intro to L2-norm Regularization
 ---
-<br/>
 
-L2-norm regularization
-------------
+
 
 In short, the rationale of regularization-based methods is to protect what the models learned from previous tasks by including regularization terms in the loss function, so that we can penalize the model change on important weights from old tasks.
 

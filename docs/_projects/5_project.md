@@ -2,13 +2,9 @@
 layout: post
 title: "A Step Further from EWC"
 description: Masking
+bigtop: Experiments with Masking
 ---
 
-Experiments with Masking
-=========================
-
-Motivation
-----------------
 
 Training multiple tasks with EWC performs ideally if the number of tasks is relatively small. However, as the number of tasks increases, the ability to learn new tasks is severely compromised in order to remember previous features. The rationale behind such a phenomenon is the accumulated regularizations of each previous task in calculating the current loss. Maybe you still have some impression about this fomula?
 

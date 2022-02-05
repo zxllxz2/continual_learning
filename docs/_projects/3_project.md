@@ -6,9 +6,6 @@ bigtop: Elastic Weight Consolidation (EWC)
 ---
 
 
-Motivation for Elastic Weight Consolidation (EWC)
--------------
-
 Although L-2 norm regularization moderates catastrophic forgetting in some sense, it has one serious problem: no distinction in feature importance of previous tasks. As a result, L2-norm regularization may pose great restrictions for all features, and, overall, the restriction can be so severe that the neural network can only remember previous tasks at the expense of not learning the new task. In light of this situation, elastic weight consolidation (EWC) comes to the rescue: EWC is able to distinguish between important and unimportant features, and will
 penalize features that are critical to previous tasks severely while penalizing marginal features slightly. This allows simultaneous remembering and learning.
 
