@@ -22,7 +22,7 @@ Binary Mask
 --------------
 The crux of solving the frozen-parameter problem is to ameliorate the accumulating restrictions exerted by training each task. One promising solution is applying a **binary mask** on gradients. According to the corresponding values in the FIM, the binary mask sets parameters' importance to zero or one with a threshold. A significance level greater than the threshold leads to a zero (frozen) in the mask. In such a manner, the gradients of crucial parameters would become zero with others untouched after multiplying the mask with gradients of the model's parameters element-wisely. Consequently, those crucial parameters of previous tasks would not be updated, while unimportant ones would be optimized during the training.
 
-<img src="../assets/images/mask_pic.jpg" style="display:block;margin-left: auto;margin-right: auto;" />
+<img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/mask_pic.jpg?raw=true" style="display:block;margin-left: auto;margin-right: auto;width:78%" />
 
 Layer-wise Binary Mask
 -------------------------
@@ -30,10 +30,10 @@ For fully connected neural networks, gradients of closer-to-output layers tend t
 
 <div style="display: flex;">
   <div style="float: left;width: 60%;padding: 5px;">
-    <img src="../assets/images/num_neurons_1l.jpg" style="display:flex" />
+    <img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/num_neurons_1l.jpg?raw=true" style="display:flex" />
   </div>
   <div style="float: left;width: 60%;padding: 5px;">
-    <img src="../assets/images/num_neurons_lastl.jpg" style="display:flex" />
+    <img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/num_neurons_lastl.jpg?raw=true" style="display:flex" />
   </div>
 </div>
 
@@ -41,17 +41,17 @@ The picture on the left depicts the distribution of neurons' log-scale significa
 
 This observation raises the problem that the neural network would consider layers near the input more significant than those closer to the output. The solution to such a problem is obtaining the binary mask layer-wisely. By freezing an equal portion of parameters for each layer, we can weigh every layer with the same significance.
 
-<img src="../assets/images/mask.jpg" style="display:block;margin-left: auto;margin-right: auto; width:60%" />
+<img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/mask.jpg?raw=true" style="display:block;margin-left: auto;margin-right: auto; width:60%" />
 <br>
 
 We carried out an experiment of layer-wise masking on the MLP we created in the first post, with three hidden layers of a hundred neurons. The mask obtained from the FIM of the first task performs ideally in training the second task when the threshold is set to freeze the most important ninety percent of neurons.
 
 <div style="display: flex;">
   <div style="float: left;width: 70%;padding: 5px;">
-    <img src="../assets/images/mask_2tasks.jpg" style="display:block;margin-left: auto;margin-right: auto;" />
+    <img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/mask_2tasks.jpg?raw=true" style="display:block;margin-left: auto;margin-right: auto;" />
   </div>
   <div style="float: left;width: 70%;padding: 5px;">
-    <img src="../assets/images/mask_2tasks_loss.jpg" style="display:flex" />
+    <img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/mask_2tasks_loss.jpg?raw=true" style="display:flex" />
   </div>
 </div>
 
@@ -60,10 +60,10 @@ However, when we apply the mask obtained from the FIM of the second task to trai
 
 <div style="display: flex;">
   <div style="float: left;width: 70%;padding: 5px;">
-    <img src="../assets/images/mask_3tasks.jpg" style="display:block;margin-left: auto;margin-right: auto;" />
+    <img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/mask_3tasks.jpg?raw=true" style="display:block;margin-left: auto;margin-right: auto;" />
   </div>
   <div style="float: left;width: 70%;padding: 5px;">
-    <img src="../assets/images/mask_3tasks_loss.jpg" style="display:flex" />
+    <img src="https://github.com/zxllxz2/continual_learning/blob/main/docs/assets/images/mask_3tasks_loss.jpg?raw=true" style="display:flex" />
   </div>
 </div>
 
