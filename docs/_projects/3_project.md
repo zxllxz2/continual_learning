@@ -7,6 +7,7 @@ description: Introduction to Elastic Weight Consolidation (EWC)
 
 Motivation for Elastic Weight Consolidation (EWC)
 ============
+
 Although L-2 norm regularization moderates catastrophic forgetting in some sense, it has one serious problem: no distinction in feature importance
 of previous tasks. As a result, L2-norm regularization may pose great restrictions for all features, and, overall, the restriction can be so severe that the
 neural network can only remember previous tasks at the expense of not learning the new task. In light of this situation,
@@ -202,3 +203,13 @@ What can we do then? Here is a hint: can we reduce the number of information nee
 Reference
 ------
 - Kirkpatrick, James, Pascanu, Razvan, Rabinowitz, Neil, Veness, Joel, Desjardins, Guillaume, Rusu, Andrei A., Milan, Kieran, Quan, John, Ramalho, Tiago, Grabska-Barwinska, Agnieszka, Hassabis, Demis, Clopath, Claudia, Kumaran, Dharshan, and Hadsell, Raia. "Overcoming Catastrophic Forgetting in Neural Networks." *PNAS*, pp.201611835, March 2017. ISSN 0027-8424, 1091-6490. doi: 10.1073/pnas.1611835114.
+
+<br>
+
+<a href="#top">Back to top</a>
+
+
+<p style="text-align:center; display: flex; justify-content: space-between">
+  <a href="../2_project">Prev: L2-norm Regularization</a>
+  <a href="../4_project">Next: Online EWC</a>
+</p>

@@ -7,7 +7,6 @@ description: Direction towards Future
 Potential Improvement
 =========================
 
-
 A remaining challenge that neither EWC nor masking could address is the failure of training a task that is strongly correlated with old tasks. Weights that are important to new tasks may also be important to strongly correlated old tasks. The failure, thus, may arise as old tasks' important parameters, which should be updated to learn the new task, are frozen to address the forgetting.
 
 The issue leads to a discussion upon the similarity among tasks. Tasks are considered similar if they share approximately the same distribution of significant parameters. Since masks are derived directly from the FIM, similarity in the zero-one pattern of binary masks implies similarity among tasks. Therefore, masking can be a powerful tool for task-similarity comparison.
@@ -22,3 +21,10 @@ So that's it! What you have just read in those six posts are what we have done d
 Our future work may explore how tasks with overlapping data points may affect the regularization-based technique. Moreover, we'll focus on adapting our approach to higher-dimensional spaces, as well as to other problem types besides regression, including classification and clustering.
 
 Again, thank you so much for reading our posts! If you are interested in topics like continual learning and catastrophic forgetting, you are more than welcome to visit <a href="http://lab.vanderbilt.edu/mint-lab" target="_blank">our lab website</a> and stay tuned for our future update. We will continue update this website as we proceed our survey and experiments.
+
+<a href="#top">Back to top</a>
+
+<p style="text-align:center; display: flex; justify-content: space-between">
+  <a href="../2_project">Prev: Masking</a>
+  <a href="../4_project">Back: Introduction</a>
+</p>

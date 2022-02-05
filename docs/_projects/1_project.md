@@ -101,7 +101,7 @@ Thanks for reading. If you like this article or are interested in the topic of c
 
 <a href="#top">Back to top</a>
 
-<br>
+
 <p style="text-align:right">
   <a href="../2_project">Next: L2-norm Regularization</a>
 </p>

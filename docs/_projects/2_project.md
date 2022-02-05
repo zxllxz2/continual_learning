@@ -40,3 +40,12 @@ Hmmmm... Obviously, the model with L2-norm does not regress better than the regr
  The graph above shows training losses on the first dataset during the whole training process. We can see that the loss from training with L2-norm regularization converges close to the loss from training with joint dataset but still somewhat higher in the end. In this case, the L2-norm regularization would be a choice, but may not be the best method for alleviating the catastrophic forgetting.
 
  That finishes our discussion on the L2-norm regularization method, and we will talk about other more powerful regularization-based methods in the next several posts. Do not miss them if you like this article or are interested in the topic of catastrophic forgetting. Thanks for your support!
+
+
+ <a href="#top">Back to top</a>
+
+
+ <p style="text-align:center; display: flex; justify-content: space-between">
+   <a href="../1_project">Prev: Introduction</a>
+   <a href="../3_project">Next: Elastic Weight Consolidation</a>
+</p>

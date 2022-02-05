@@ -70,3 +70,14 @@ However, when we apply the mask obtained from the FIM of the second task to trai
 Current, one possible solution that we come up with for this problem is to make the neural network sparse. By calculating the L1-norm for each layer, we can get a sparse neural network with most neurons zero. In such a manner, we may only need to manually freeze a few neurons to remember old tasks, while other free neurons would only be capable of learning new tasks without changing previous behaviors. We are currently experimenting this approach.
 
  That finishes our discussion on the masking. Next we will talk about some possible improvement after applying masking on EWC. Check it if you like this article or are interested in the topic of catastrophic forgetting. Thanks for your support!
+
+
+ <br>
+
+ <a href="#top">Back to top</a>
+
+
+ <p style="text-align:center; display: flex; justify-content: space-between">
+   <a href="../2_project">Prev: Online EWC</a>
+   <a href="../4_project">Next: What's Next</a>
+ </p>

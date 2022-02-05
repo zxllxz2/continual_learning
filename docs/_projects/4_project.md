@@ -4,8 +4,6 @@ title: "Maybe More Efficiency?"
 description: Introduction to Online EWC
 ---
 
-
-
 Motivation for Online EWC
 ============
 
@@ -150,3 +148,14 @@ Task 4:
 ![task4_online4](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/task4_online4.png?raw=true)
 
 Not bad, right? But can we do better? Obviously, Online EWC is not the end, the next section will focus on possible improvements for EWC techniques.
+
+
+<br>
+
+<a href="#top">Back to top</a>
+
+
+<p style="text-align:center; display: flex; justify-content: space-between">
+  <a href="../2_project">Prev: Elastic Weight Consolidation</a>
+  <a href="../4_project">Next: Masking</a>
+</p>
