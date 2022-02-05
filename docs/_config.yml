@@ -54,6 +54,8 @@ sass:
 include:
   - _pages
 
+site_favicon: /assets/images/favicon.ico
+
 exclude:
   - README.md
   - LICENSE.md
