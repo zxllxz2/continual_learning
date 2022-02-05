@@ -10,7 +10,7 @@ twitter: MintLab
 
 _Assistant Professor of Computer Science, Vanderbilt University_<br>
 
-<i class="fa fa-envelope-o"></i> `soheil.kolouri@vanderbilt.edu`
+<i class="far fa-envelope"></i> `soheil.kolouri@vanderbilt.edu`
 
 **Office**<br>
 Featheringill-Jacobs Hall<br>
