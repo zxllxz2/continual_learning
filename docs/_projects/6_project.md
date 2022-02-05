@@ -4,8 +4,8 @@ title: What's Next?
 description: Direction towards Future
 ---
 
-# Potential Improvement
-<!-- ========================= -->
+Potential Improvement
+=========================
 
 A remaining challenge that neither EWC nor masking could address is the failure of training a task that is strongly correlated with old tasks. Weights that are important to new tasks may also be important to strongly correlated old tasks. The failure, thus, may arise as old tasks' important parameters, which should be updated to learn the new task, are frozen to address the forgetting.
 
