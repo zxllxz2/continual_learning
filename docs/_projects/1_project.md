@@ -4,7 +4,6 @@ title: "Why You Forget Me?"
 description: Explanation on Catastrophic Forgetting
 ---
 
-
 What is catastrophic forgtting
 ============
 
