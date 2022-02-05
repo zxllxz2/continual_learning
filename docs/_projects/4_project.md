@@ -45,23 +45,23 @@ class OnlineEWC:
         self._params = {}
         self._fim = {}
         self._loss = loss
+        self._inputs = {}
+        self._labels = {}
         self._loss_lst = {}
         self._optim = None
         self._lambda = 0
-        self._time = 0
 
     def train(self, inputs, labels, index, lr, alpha = 0.5, lam=0, epochs=500):
-        self._loss_lst = {}
         self._optim = torch.optim.Adam(self._model.parameters(), lr=lr)
 
         loss_values_x1 = []
         self._lambda = lam
-        self._time = 0
+        self._inputs[index] = inputs
+        self._labels[index] = inputs
 
         # training
         for _ in range(epochs):
-            start_time = time.time()
-            f = self._model(inputs[index].float())
+            f = self._model(inputs.float())
             regularizer = 0
             if len(self._params) != 0:
                 loss_ewc = 0
@@ -69,37 +69,28 @@ class OnlineEWC:
                     loss_ewc += torch.matmul(self._fim[n].T, (torch.reshape(p, (-1,1)) - torch.reshape(self._params[n], (-1,1))) ** 2)
                 regularizer += self._lambda * loss_ewc
 
-            loss = self._loss(f, labels[index].unsqueeze(1).float()) + regularizer
+            loss = self._loss(f, labels.unsqueeze(1).float()) + regularizer
             self._optim.zero_grad()
             loss.backward()
             self._optim.step()
-            self._time += time.time() - start_time
 
             # store loss
             loss_values_x1.append(loss.item())
 
-            if index in self._loss_lst:
-                self._loss_lst[index].append(loss_values_x1[-1])
-            else:
-                self._loss_lst[index] = [loss_values_x1[-1]]
 
-            for i in range(len(inputs)):
-                if i != index:
-                    tmp_f = self._model(inputs[i].float())
-                    tmp_loss = self._loss(tmp_f, labels[i].unsqueeze(1).float())
-                    if i in self._loss_lst:
-                        self._loss_lst[i].append(tmp_loss)
-                    else:
-                        self._loss_lst[i] = [tmp_loss]
+            for n in self._loss_lst:
+                tmp_f = self._model(self._inputs[n].float())
+                tmp_loss = self._loss(tmp_f, self._labels[n].unsqueeze(1).float())
+                self._loss_lst[n].append(tmp_loss)
 
-        start_time = time.time()
+
         for n, p in deepcopy(self._model).named_parameters():
             if p.requires_grad:
                 self._params[n] = p
 
         # update fisher information matrix
-        f = self._model(inputs[index].float())
-        loss = self._loss(f, labels[index].unsqueeze(1).float())
+        f = self._model(inputs.float())
+        loss = self._loss(f, labels.unsqueeze(1).float())
         self._optim.zero_grad()
         loss.backward()
 
@@ -112,7 +103,7 @@ class OnlineEWC:
                 self._fim[n] = self._fim[n]*alpha + p**2 * (1-alpha)
             else:
                 self._fim[n] = p**2
-        self._time += time.time() - start_time
+        self._loss_lst[index] = loss_values_x1
 ~~~
 
 To compare online EWC with offline EWC, it's a good idea to conduct experiments on online EWC with the same sample data
