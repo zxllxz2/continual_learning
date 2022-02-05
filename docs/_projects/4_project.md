@@ -148,7 +148,7 @@ Task 4:
 Not bad, right? But can we do better? Obviously, Online EWC is not the end, the next section will focus on possible improvements for EWC techniques.
 
 
-<br>
+
 
 <a href="#top">Back to top</a>
 

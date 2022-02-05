@@ -198,7 +198,7 @@ Reference
 ------
 - Kirkpatrick, James, Pascanu, Razvan, Rabinowitz, Neil, Veness, Joel, Desjardins, Guillaume, Rusu, Andrei A., Milan, Kieran, Quan, John, Ramalho, Tiago, Grabska-Barwinska, Agnieszka, Hassabis, Demis, Clopath, Claudia, Kumaran, Dharshan, and Hadsell, Raia. "Overcoming Catastrophic Forgetting in Neural Networks." *PNAS*, pp.201611835, March 2017. ISSN 0027-8424, 1091-6490. doi: 10.1073/pnas.1611835114.
 
-<br>
+
 
 <a href="#top">Back to top</a>
 
