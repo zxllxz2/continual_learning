@@ -68,7 +68,6 @@ Current, one possible solution that we come up with for this problem is to make 
  That finishes our discussion on the masking. Next we will talk about some possible improvement after applying masking on EWC. Check it if you like this article or are interested in the topic of catastrophic forgetting. Thanks for your support!
 
 
-
  <a href="#top">Back to top</a>
 
 
