@@ -53,6 +53,7 @@ sass:
 
 include:
   - _pages
+  - _includes
 
 exclude:
   - README.md
