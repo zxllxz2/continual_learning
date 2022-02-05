@@ -6,7 +6,7 @@ avatar: ZihaoWu.jpg
 twitter: MintLab
 ---
 
-<img width="300" src="{{site.baseurl}}/images/people/{{page.avatar}}" data-action="zoom">
+<img width="300" src="{{site.baseurl}}/assets/images/people/{{page.avatar}}" data-action="zoom">
 
 _Undergraduate Student_<br>
 

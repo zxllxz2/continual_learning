@@ -6,7 +6,7 @@ avatar: soheil_kolouri.png
 twitter: MintLab
 ---
 
-<img width="300" src="{{site.baseurl}}/images/people/{{page.avatar}}" data-action="zoom">
+<img width="300" src="{{site.baseurl}}/assets/images/people/{{page.avatar}}" data-action="zoom">
 
 _Assistant Professor of Computer Science, Vanderbilt University_<br>
 
