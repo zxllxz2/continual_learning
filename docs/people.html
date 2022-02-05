@@ -1,0 +1,59 @@
+---
+layout: default
+permalink: /people/
+title: People
+---
+
+<div>
+	{% assign people_sorted = site.people | sort: 'joined' %}
+	{% assign role_array = "pi|undergrad" | split: "|" %}
+
+	{% for role in role_array %}
+
+	{% assign people_in_role = people_sorted | where: 'position', role %}
+
+	<!-- Skip section if there's nobody -->
+	{% if people_in_role.size == 0 %}
+	  {% continue %}
+	{% endif %}
+
+	<div class="pos_header">
+	{% if role == 'pi' %}
+	<h3>Principal Investigator</h3>
+	 {% elsif role == 'undergrad' %}
+	<h3>Undergraduate Members</h3>
+	{% endif %}
+	</div>
+
+	<div class="content list people">
+	  {% for profile in people_sorted %}
+		{% if profile.position contains role %}
+		  <div class="list-item-people">
+			<p class="list-post-title">
+				<a href="{{ site.baseurl }}{{ profile.url }}"><img class="profile-thumbnail" src="{{site.baseurl}}/assets/images/people/{{profile.avatar}}"></a>
+			  <a class="name" href="{{ site.baseurl }}{{ profile.url }}">{{ profile.name }}</a>
+			</p>
+		  </div>
+		{% endif %}
+	  {% endfor %}
+	</div>
+	<hr>
+
+	{% endfor %}
+</div>
+
+
+<!-- <div>
+	{% for post in site.posts %}
+	{% unless post.next %}
+	<h3><small>{{ post.date | date: '%B %Y' }}</small></h3>
+	{% else %}
+	{% capture year %}{{ post.date | date: '%Y %b' }}{% endcapture %}
+	{% capture nyear %}{{ post.next.date | date: '%Y %b' }}{% endcapture %}
+	{% if year != nyear %}
+	<h3><small>{{ post.date | date: '%B %Y' }}</small></h3>
+	{% endif %}
+	{% endunless %}
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br>
+	{% endfor %}
+</div> -->
