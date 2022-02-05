@@ -4,8 +4,7 @@ title:  "Start from Naive Regularization"
 description: L2-norm Regularization
 bigtop: Into Regularization-based Methods
 ---
-
-<br>
+<br/>
 
 L2-norm regularization
 ------------
