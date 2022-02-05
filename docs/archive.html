@@ -5,8 +5,48 @@ title: People
 ---
 
 <div>
-	<h1> Under Construction </h1>
+	{% assign people_sorted = site.people | sort: 'joined' %}
+	{% assign role_array = "pi|undergrad" | split: "|" %}
+
+	{% for role in role_array %}
+
+	{% assign people_in_role = people_sorted | where: 'position', role %}
+
+	<!-- Skip section if there's nobody -->
+	{% if people_in_role.size == 0 %}
+	  {% continue %}
+	{% endif %}
+
+	<div class="pos_header">
+	{% if role == 'pi' %}
+	<h3>Principal Investigator</h3>
+	 {% elsif role == 'undergrad' %}
+	<h3>Undergraduate Members</h3>
+	{% endif %}
+	</div>
+
+	<div class="content list people">
+	  {% for profile in people_sorted %}
+		{% if profile.position contains role %}
+		  <div class="list-item-people">
+			<p class="list-post-title">
+				<a href="{{ site.baseurl }}{{ profile.url }}"><img class="profile-thumbnail" src="{{site.baseurl}}/assets/images/people/{{profile.avatar}}"></a>
+			  <a class="name" href="{{ site.baseurl }}{{ profile.url }}">{{ profile.name }}</a>
+			</p>
+		  </div>
+		{% endif %}
+	  {% endfor %}
+	</div>
+	<hr>
+
+	{% endfor %}
 </div>
+
+
+<!--
+<div>
+	<h1> Under Construction </h1>
+</div> -->
 <!--
 <div>
 	{% for post in site.posts %}
