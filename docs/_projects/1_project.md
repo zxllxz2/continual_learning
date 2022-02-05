@@ -5,7 +5,7 @@ description: Explanation on Catastrophic Forgetting
 bigtop: What is catastrophic forgtting
 ---
 
-<!-- ============ -->
+
 
 In real life, it is usual for a person to encounter a large number of tasks, and the person has to learn those tasks one by one. As common sense, the person would still remember almost all previously-learned tasks after finishing learning the last task. However, does this apply to the neural network as well? Although artificial neural networks can learn from different tasks, recognize patterns, and predict according to knowledge obtained, can the neural network master all knowledge as well as, or maybe better than, humans, when different tasks are given for training in a particular order? This article will tell you the answer.
 
