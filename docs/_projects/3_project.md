@@ -16,7 +16,7 @@ penalize features that are critical to previous tasks severely while penalizing 
 
 
 Idea behind EWC
-============
+-------
 
 EWC tackles the problem from a probabilistic perspective. Assume that we are trying to continually learn from a collection of datasets, D. The
 conditional probability that we are trying to optimize would be *<span>log p(&theta; | D)</span>*. Let's first consider the two-task case.
@@ -81,7 +81,7 @@ MAP then gives the loss function *<span>L</span>* that we should minimize in EWC
 
 
 Offline EWC
-============
+-------
 
 Obviously, it is uncommon for real world to contain only two tasks. So, now, we will step into multi-task continual learning.
 Offline EWC is the first multi-task technique we'll explore.
@@ -98,8 +98,8 @@ Typically, the *<span>&lambda;</span>* value used for each task will be set to b
 individually for particular uses.
 
 
-Implementation of offline EWC
-============
+Implementation of Offline EWC
+-------
 
 The offline EWC is implemented below using pytorch
 
@@ -160,8 +160,8 @@ class OfflineEWC:
         return loss_values_x1
 ~~~
 
-Demo of offline EWC
-============
+Demo of Offline EWC
+------
 
 Next, we will try to convince you that offline EWC works through an example of four individual tasks. The data on which we're trying to train
 continually is the following, and we will be using a 4-hidden-layer MLP with perceptron number of 1, 100, 100, 100, 100, and 1.
@@ -192,12 +192,13 @@ Task 4:
 
 
 What can be improved?
-============
+-----------
 
 The advantage of using offline EWC is obvious: it alleviates the problem of catastrophic forgetting and mimic the effect
-of Hessian matrix to the greatest degree. However, its downside can also be annoying. Imagine a situation such that there are hundreds of thousands
-tasks waiting to be learnt. Offline EWC will perform poorly since it tries to store fisher information matrix for each task being
-learnt, and there will be hundreds of thousands of them. So, in this case, not only the space consumption will be large, but also the
-computation cost wil be huge.
+of Hessian matrix to the greatest degree. However, its downside can also be annoying. Imagine a situation such that there are hundreds of thousands tasks waiting to be learnt. Offline EWC will perform poorly since it tries to store fisher information matrix for each task being learnt, and there will be hundreds of thousands of them. So, in this case, not only the space consumption will be large, but also the computation cost wil be huge.
 
 What can we do then? Here is a hint: can we reduce the number of information needed? The next section would give you the answer.
+
+Reference
+------
+- Kirkpatrick, James, Pascanu, Razvan, Rabinowitz, Neil, Veness, Joel, Desjardins, Guillaume, Rusu, Andrei A., Milan, Kieran, Quan, John, Ramalho, Tiago, Grabska-Barwinska, Agnieszka, Hassabis, Demis, Clopath, Claudia, Kumaran, Dharshan, and Hadsell, Raia. "Overcoming Catastrophic Forgetting in Neural Networks." *PNAS*, pp.201611835, March 2017. ISSN 0027-8424, 1091-6490. doi: 10.1073/pnas.1611835114.
