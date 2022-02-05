@@ -1,4 +1,5 @@
 ---
+layout: default
 name: Zihao Wu
 position: undergrad
 avatar: ZihaoWu.jpg

@@ -1,4 +1,5 @@
 ---
+layout: default
 name: Wangzhe Sun
 position: undergrad
 avatar: WangzheSun.jpg

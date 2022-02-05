@@ -1,4 +1,5 @@
 ---
+layout: default
 name: Soheil Kolouri
 position: pi
 avatar: soheil_kolouri.png

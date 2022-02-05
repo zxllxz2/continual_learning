@@ -1,4 +1,5 @@
 ---
+layout: default
 name: Toby Zhu
 position: undergrad
 avatar: TobyZhu.jpg
