@@ -3,14 +3,15 @@ layout: about
 permalink: /
 profile:
   align: right
-  image: logo_square.png
+  image: Xiaoliang_Zhu1.jpg
 published: true
 ---
 
-Welcome to the <a href="http://lab.vanderbilt.edu/mint-lab" target="_blank">Machine Intelligence and Neural Technologies (MINT) lab</a> at Vanderbilt University! We are an undergradate team focusing on the catastrophic forgetting phenomenon in the area of continual learning.
+I am Xiaoliang Zhu, or Toby Zhu, he/him/his. This is my <a href="./resume.pdf" target="_blank">resume</a>. Check it if you have an interest.
+<!-- [resume](/resume.pdf).  -->
 
-But wait. What is catastrophic forgetting? Check our [first project](projects/1_project) that thoroughly explains this term using relatively simple examples.
+I study Math, Econ, and CS in [Vanderbilt University](https://www.vanderbilt.edu/). Looks like you are from Vanderbilt as well? Great. If you have never heard of this school, forget about it. It doesn't matter.
 
-We have surveyed existing methods to solve the catastrophic forgetting, including Elastic Weight Consolidation (EWC), Synapsis intelligence (SI), etc. Check our projects which contain a series of examples and experiments on those methods.
+I have worked for the College of Art & Science and also College of Engineering as a TA, and I'm currently working under [Dr. Kolouri](https://skolouri.github.io/) in [Machine Intelligence and Neural Technologies (MINT) lab](http://lab.vanderbilt.edu/mint-lab) as a RA, researching about catastrophic forgetting in the area of continual learning.
 
-In the future, we will continue to expand our survey list and explore selective forgetting, a technique to make previously trained synapsis plastic again. For now, we are researching the masking technique, such that we fix the weights of a certain number of neurons in the model to maintain the model performance. Check our projects if you have any interest.
+Hope you are still here. There are some cool things that you may want to look at. Maybe have a random check?

@@ -1,109 +1,152 @@
 ---
 layout: post
-title: "Why you forget me?"
-description: Explanation on catastrophic forgetting
+title: Short Project
+description: description of the short project which is long enough
 ---
+Example modified from [here](http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html){:target="_blank"}.
 
-
-What is catastrophic forgtting
+H1 Header
 ============
 
-In real life, it is usual for a person to encounter a large number of tasks, and the person has to learn those tasks one by one. As common sense, the person would still remember almost all previously-learned tasks after finishing learning the last task. However, does this apply to the neural network as well? Although artificial neural networks can learn from different tasks, recognize patterns, and predict according to knowledge obtained, can the neural network master all knowledge as well as, or maybe better than, humans, when different tasks are given for training in a particular order? This article will tell you the answer.
+Paragraphs are separated by a blank line.
+
+2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
+look like:
+
+  * this one
+  * that one
+  * the other one
+
+Note that --- not considering the asterisk --- the actual text
+content starts at 4-columns in.
+
+> Block quotes are
+> written like so.
+>
+> They can span multiple paragraphs,
+> if you like.
+
+Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
+in chapters 12--14"). Three dots ... will be converted to an ellipsis.
+Unicode is supported. ☺
 
 
-Numerical experiments
+H2 Header
 ------------
 
-Here is a simple example in the 2D dimension where we have two disjoint datasets for the experiment. We will train our neural network to fit the first dataset, which is the first task, and then to fit the second dataset, which is the second task. Both datasets are generated from polynomials with some noise. Below is the visualization for the datasets, together with their original functions.
+Here's a numbered list:
 
-<img src="https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/datasets1.png?raw=true"><img/><br>
-We defined our Multi-Layer-Perceptron mode using PyTorch.
+ 1. first item
+ 2. second item
+ 3. third item
 
-~~~python
-import torch
-import torch.nn as nn
+Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here's a code sample:
 
-class MLP(nn.Module):
-  def __init__(self,architecture=[1,100,100,1]):
-    super(MLP, self).__init__()   
+    # Let me re-iterate ...
+    for i in 1 .. 10 { do-something(i) }
 
-    self.architecture = architecture
-    self.activation = nn.Sigmoid()
+As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:
 
-    # ading layers
-    arch=[]
-    for i in range(1, len(architecture) - 1):
-        arch.append(nn.Linear(architecture[i - 1], architecture[i]))            
-        arch.append(self.activation)
-
-    self.basis = nn.Sequential(*arch)
-    self.regressor = nn.Linear(architecture[-2], architecture[-1])
-
-  def forward(self, f):
-    assert f.shape[1] == self.architecture[0]
-    z = self.basis(f)
-    out = self.regressor(z)
-    return out
+~~~
+define foobar() {
+    print "Welcome to flavor country!";
+}
 ~~~
 
-And we set the desired learning rate, number of epochs, loss function, and optimizer.
+(which makes copying & pasting easier). You can optionally mark the
+delimited block for Pandoc to syntax highlight it:
 
 ~~~python
-lr = 1e-2
-n_epochs = 200
-model = MLP(architecture=[1,150,150,1])
-loss_f = nn.MSELoss()
-optim = torch.optim.Adam(model.parameters(), lr=lr)
+import time
+# Quick, count to ten!
+for i in range(10):
+    # (but not *too* quick)
+    time.sleep(0.5)
+    print(i)
 ~~~
 
-Great! Let's start our first task! While training, we plot the MSE loss on both datasets. We can see that the loss for task 1 drops significantly. Since we do not train on the second dataset, it is not surprising to see its loss grow.
-
-![loss_after_task1_1](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/loss_after_task1_1.jpg?raw=true "loss after training on task 1")
-
-And we can visualize our regressor after the first task.
-
-![regressor_after_task1](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/regressor_after_task1.png?raw=true "regressor after training on task 1")
-
-It looks Okay. Now we will continue to train our model on the second dataset. We plot the MSE loss on both datasets as well.
-
-![loss_after_task2_1](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/loss_after_task2_1.png?raw=true "loss after training on task 2")
-
-The loss curve looks really weird. The loss for the second dataset decreases, while the loss for the previously trained dataset increases dramatically. Then, how about the final regressor we get?
-
-![regressor_after_task2](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/regressor_after_task2.png?raw=true "regressor after training on task 2")
-
-The regressor becomes a mess. Although the model predicts data in task 2 accurately, it almost forgets everything learned from the first task. We can watch an animation of our training process to visualize this forgetting phenomenon.<br>
-![loss_after_task1_1](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/training1.gif?raw=true "regressor training")<br>
-Such a forgetting phenomenon that appeared in our training is the so-called **Catastrophic forgetting**. When people train a model on a large number of tasks sequentially, where the data of old tasks are not available anymore during training new ones, catastrophic forgetting always happens, as the model keeps forgetting knowledge obtained from the preceding tasks.
 
 
-More experiments
-------------
-Besides disjoint datasets, here are two experiments on joint datasets generated by the same function.
+### An h3 header ###
 
-These two datasets are generated by the radial basis function. We can see the animation of fitting a model on the two datasets sequentially.<br>
-![RBF_forgetting](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/RBF_forgetting.gif?raw=true)<br>
-This clearly shows the forgetting phenomenon. We can also check the MSE loss curves.
+Now a nested list:
 
-![RBE_loss](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/same_func_loss.jpg?raw=true)
+ 1. First, get these ingredients:
 
-Next, these two datasets are generated by the sigmoid function. We can see the animation of fitting a model on the two datasets sequentially.<br>
-![Sigmoid_forgetting](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/sigmoid_forgetting.gif?raw=true)<br>
-Also checks for the MSE loss curves.
+      * carrots
+      * celery
+      * lentils
 
-![Sigmoid_loss](https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/same_func_loss2.jpg?raw=true)
+ 2. Boil some water.
 
-How to solve catastrophic forgtting
-============
+ 3. Dump everything in the pot and follow
+    this algorithm:
 
-Now, we have seen some toy examples of catastrophic forgetting. However, is it a significant problem to notice? In fact, the catastrophic forgetting phenomenon is extremely important in the industrial setting, as the target function or the training dataset of a model is always subject to unpredictable changes from the market. Therefore, the loss of predicting ability on the previously trained data can be devastating.
+        find wooden spoon
+        uncover pot
+        stir
+        cover pot
+        balance wooden spoon precariously on pot handle
+        wait 10 minutes
+        goto first step (or shut off burner when done)
 
-Unfortunately, catastrophic forgetting is still an unsolved problem in the continual learning area. A simple solution, which is currently the most effective solution, is to ensure that data from all tasks can be simultaneously available during future training. In this case, for any future task, we combine its own data with data from previous tasks and optimize our model on this huge overall dataset. This approach, in fact, would yield an upper bound for the performance of any continual learning model. However, it usually requires a memory system to remember previous task data and replay them during training on a new task, which is impractical with a massive amount of tasks as the memory cost would be unaffordable.
+    Do not bump wooden spoon or it will fall.
 
-<p align="center">
-<img src="https://github.com/zxllxz2/tempweb/blob/main/docs/assets/images/annoyed.jpg?raw=true" alt="drawing" width="240"><img/>
-</p>
+Notice again how text always lines up on 4-space indents (including
+that last line which continues item 3 above).
 
-Luckily, some studies invented other methods to alleviate catastrophic forgetting, which can be broadly divided into three main categories - architectural, regularization-based, and memory-based. All those methods reduce forgetting to some extent with limitations. What we are going to discuss here are regularization-based methods, including the most basic L2-norm regularization and the Elastic Weight Consolidation (EWC). Basically, regularization-based methods apply constraints on the model, forcing model parameters to stay close to optimized values for the old tasks. We will go through both of them in later sections.
+Here's a link to [a website](http://foo.bar), to a [local
+doc](local-doc.html), and to a [section heading in the current
+doc](#an-h2-header). Here's a footnote [^1].
 
-Thanks for reading. If you like this article or are interested in the topic of catastrophic forgetting, you are more than welcome to read our other project posts. Thanks again for your support!
+[^1]: Some footnote text.
+
+Tables can look like this:
+
+| Header 1 | Header 2                   | Header 3 |
+|:--------:|:--------------------------:|:--------:|
+| data1a   | Data is longer than header | 1        |
+| d1b      | add a cell                 |          |
+| lorem    | ipsum                      | 3        |
+|          | empty outside cells        |          |
+| skip     |                            | 5        |
+| six      | Morbi purus                | 6        |
+
+
+A horizontal rule follows.
+
+***
+
+Here's a definition list:
+
+apples
+  : Good for making applesauce.
+
+oranges
+  : Citrus!
+
+tomatoes
+  : There's no "e" in tomatoe.
+
+Again, text is indented 4 spaces. (Put a blank line between each
+term and  its definition to spread things out more.)
+
+Here's a "line block" (note how whitespace is honored):
+
+| Line one
+|   Line too
+| Line tree
+
+and images can be specified like so:
+
+![example image](https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop "An exemplary image")
+
+Inline math equation: $\omega = d\phi / dt$. Display
+math should get its own line like so:
+
+$$I = \int \rho R^{2} dV$$
+
+And note that you can backslash-escape any punctuation characters
+which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
