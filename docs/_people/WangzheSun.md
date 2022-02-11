@@ -12,4 +12,4 @@ _Undergraduate Student_<br>
 
 <i class="far fa-envelope"></i> `wangzhe.sun@vanderbilt.edu`
 
-Wangzhe Sun is a junior majoring in Computer Science and Maths. His research interest lies in traditional machine learning, deep learning, and computer vision.
+Wangzhe Sun is an undergraduate student studying Computer Science and Mathematics at Vanderbilt University. His research interest lies in traditional machine learning and robotics. He is currently working under Dr. Kolouri on projects focusing on continual learning.
