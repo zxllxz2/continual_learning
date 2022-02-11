@@ -21,6 +21,12 @@ Our future work may explore how tasks with overlapping data points may affect th
 
 Again, thank you so much for reading our posts! If you are interested in topics like continual learning and catastrophic forgetting, you are more than welcome to visit <a href="http://lab.vanderbilt.edu/mint-lab" target="_blank">our lab website</a> and stay tuned for our future update. We will continue update this website as we proceed our survey and experiments.
 
+Reference
+------
+- TRGP: Trust Region Gradient Projection for Continual
+  Learning. In Tenth International Conference on Learning
+  Representations, ICLR 2022. ICLR, 2022. In communication.
+
 <a href="#top">Back to top</a>
 
 <p style="text-align:center; display: flex; justify-content: space-between">
